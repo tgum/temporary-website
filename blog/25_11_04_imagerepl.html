@@ -1,0 +1,191 @@
+			<!DOCTYPE html>
+	<html lang="en">
+		<!-- yo what r u doing in my code LMAO
+			 if u want u can poke around and steal stuff! just credit me :)
+			 also it might be badly formatted idk -->
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<link rel="shortcut icon" href="/imgs/squirrel.png">
+			<link rel="stylesheet" href="/style.css">
+			<link rel="stylesheet" href="/styles/code.css">
+			<meta name="author" content="tgum">
+			<meta property="og:title" content=" imagerepl">
+			
+				<meta property="og:description" content="idea for an image editing DSL">
+				<meta name="description" content="idea for an image editing DSL">
+			
+			<meta property="og:image" content="/imgs/misc/SKOOKY.png">
+			<title> imagerepl</title>
+			<!-- <link rel="webmention" href="https://webmention.io/tgum.neocities.org/webmention"> -->
+		</head>
+		<body>
+			<header>
+					<nav>
+	<ul id=navbar >
+<li>		<a class=navel href="/"> home</a></li>
+<li>		<a class=navel href="/blog"> blog</a></li>
+<li>		<a class=navel href="/links.html"> links </a></li>
+<li>		<a class=navel href="/projects/"> projects </a></li>
+<li>		<a class=navel href="/about.html"> about </a></li></ul>
+	</nav>
+
+			</header>
+			<main>
+
+
+			<article>
+				<h1  >imagerepl</h1>
+				<div class=time>Written on the <strong>4th Nov 2025</strong></div>
+				<hr>
+				<section>
+					
+<p>
+	when i want to edit photos i have to either open GIMP, which takes 1 minute to launch, so i often dont do it, or use a discord bot but as you can imagine the workflow isnt great lol. BUT compared to gimp it has a feature that i prefer, which is that to make an edit, instead of searching through every menu, you type commands. imagemagick is probably similar but idk how to use it and i doubt its practical for more complex tasks.
+</p>
+<p>
+	my idea is to have a kind of live coding environement but for image editing, possibly with extra editor features like an interactive coordinate widget etc. so then you can create a bunch of buffers (layers, objects, masks, same thing) and apply actions to them. like this (just a rough idea i havent though that much about the syntax)
+</p>
+<code><div class="highlight"><table class="highlighttable"><tr><td class="linenos linenodiv"><code data-line-number=" 1"></code></td><td class="code"><code><span class="hinv">birb</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinb">load</span><span class="hip">(</span><span class="his2">&quot;./bird.png&quot;</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 2"></code></td><td class="code"><code><span class="hinv">glasses</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinb">load</span><span class="hip">(</span><span class="his2">&quot;props/sunglasses.png&quot;</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 3"></code></td><td class="code"><code><span class="hinv">pattern</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinf">noise</span><span class="hip">(</span><span class="hinv">birb</span><span class="hip">.</span><span class="hipy">w</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">birb</span><span class="hip">.</span><span class="hipy">h</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 4"></code></td><td class="code"><code><span class="hio">//</span><span class="hiw"> </span><span class="hinv">mask</span><span class="hiw"> </span><span class="hinv">is</span><span class="hiw"> </span><span class="hinv">just</span><span class="hiw"> </span><span class="hinv">a</span><span class="hiw"> </span><span class="hinv">texture</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 5"></code></td><td class="code"><code><span class="hinv">mask</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinv">glasses</span><span class="hip">.</span><span class="hinf">key</span><span class="hip">(</span><span class="hinf">rgb</span><span class="hip">(</span><span class="himi">0</span><span class="hip">,</span><span class="himi">255</span><span class="hip">,</span><span class="himi">0</span><span class="hip">),</span><span class="hiw"> </span><span class="himi">5</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 6"></code></td><td class="code"><code><span class="hio">//</span><span class="hiw"> </span><span class="hinv">swizzling</span><span class="hiw"> </span><span class="hinv">entire</span><span class="hiw"> </span><span class="hinv">channels</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 7"></code></td><td class="code"><code><span class="hinv">glasses</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinf">mux</span><span class="hip">(</span><span class="hinv">glasses</span><span class="hip">.</span><span class="hipy">rgb</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">mask</span><span class="hip">.</span><span class="hipy">a</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 8"></code></td><td class="code"><code><span class="hio">//</span><span class="hiw"> </span><span class="hinv">foo</span><span class="hip">:</span><span class="hinf">bar</span><span class="hip">()</span><span class="hiw"> </span><span class="hinv">is</span><span class="hiw"> </span><span class="hinv">the</span><span class="hiw"> </span><span class="hinv">same</span><span class="hiw"> </span><span class="hinv">as</span><span class="hiw"> </span><span class="hinv">foo</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinv">foo</span><span class="hip">.</span><span class="hinf">bar</span><span class="hip">()</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number=" 9"></code></td><td class="code"><code><span class="hinv">birb</span><span class="hip">:</span><span class="hinf">scale</span><span class="hip">(</span><span class="himi">2</span><span class="hinv">x</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="10"></code></td><td class="code"><code><span class="hinv">glasses</span><span class="hip">:</span><span class="hinf">scale</span><span class="hip">(</span><span class="hinv">birb</span><span class="hip">.</span><span class="hipy">w</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">AUTO</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="11"></code></td><td class="code"><code><span class="hinv">glasses</span><span class="hip">:</span><span class="hipy">center</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="12"></code></td><td class="code"><code><span class="hinv">glases</span><span class="hip">:</span><span class="hinf">offset</span><span class="hip">(</span><span class="himi">0</span><span class="hip">,</span><span class="hiw"> </span><span class="hio">-</span><span class="himi">200</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="13"></code></td><td class="code"><code><span class="hinv">birb</span><span class="hip">:</span><span class="hinf">resize</span><span class="hip">(</span><span class="himi">0</span><span class="hip">,</span><span class="hiw"> </span><span class="himi">100</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">KEEPPOS</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="14"></code></td><td class="code"><code><span class="hio">//</span><span class="hiw"> </span><span class="hinv">operate</span><span class="hiw"> </span><span class="hinv">on</span><span class="hiw"> </span><span class="hinv">multiple</span><span class="hiw"> </span><span class="hinv">buffers</span><span class="hiw"> </span><span class="hinv">at</span><span class="hiw"> </span><span class="hinv">the</span><span class="hiw"> </span><span class="hinv">same</span><span class="hiw"> </span><span class="hinv">time</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="15"></code></td><td class="code"><code><span class="hip">[</span><span class="hinv">birb</span><span class="hip">,</span><span class="hinv">glasses</span><span class="hip">]:</span><span class="hinf">offset</span><span class="hip">(</span><span class="himi">0</span><span class="hip">,</span><span class="himi">100</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="16"></code></td><td class="code"><code><span class="hinv">caption</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hinf">text</span><span class="hip">(</span><span class="his2">&quot;hey gus&quot;</span><span class="hip">,</span><span class="hiw"> </span><span class="himi">15</span><span class="hip">,</span><span class="hiw"> </span><span class="his2">&quot;comic sans&quot;</span><span class="hip">)</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="17"></code></td><td class="code"><code><span class="hio">//</span><span class="hiw"> </span><span class="hikr">if</span><span class="hiw"> </span><span class="hinv">out</span><span class="hiw"> </span><span class="hinv">is</span><span class="hiw"> </span><span class="hiow">not</span><span class="hiw"> </span><span class="hinv">assigned</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">all</span><span class="hiw"> </span><span class="hinv">the</span><span class="hiw"> </span><span class="hinv">buffers</span><span class="hiw"> </span><span class="hinv">are</span><span class="hiw"> </span><span class="hinv">stacked</span><span class="hiw"> </span><span class="hikr">in</span><span class="hiw"> </span><span class="hinv">order</span><span class="hiw"> </span><span class="hinv">of</span><span class="hiw"> </span><span class="hinv">creation</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="18"></code></td><td class="code"><code><span class="hinv">out</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hip">[</span><span class="hinv">birb</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">glasses</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">caption</span><span class="hip">].</span><span class="hinv">stack</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="19"></code></td><td class="code"><code><span class="hinv">out</span><span class="hiw"> </span><span class="hio">=</span><span class="hiw"> </span><span class="hip">[</span><span class="hinv">out</span><span class="hip">,</span><span class="hiw"> </span><span class="hinv">pattern</span><span class="hip">].</span><span class="hinf">blend</span><span class="hip">(</span><span class="hinv">MULTIPLY</span><span class="hip">)</span>
+</code></td></tr></table></div></code>
+	<p>
+	there would be a live preview to make the workflow as smooth as possible.
+	i probably wont make this unless i find a library which makes it really easy, but i think its an interesting idea.
+	</p>
+
+				</section>
+			</article>
+		 		</main>
+		<footer>
+			<!-- <script src="/scripts/mousetrail.js"></script> -->
+			<script src="/scripts/mousetrail.js"></script>
+				<div class="webrings">
+		<div style="text-align:center">webrings:</div>
+			<div style="text-align:center">
+		<a href="https://webring.bucketfish.me/redirect.html?to=prev&name=tgum">[« prev]</a>
+		<a href="https://webring.bucketfish.me">bucket webring</a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=random&name=tgum"><small>[random]</small></a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=next&name=tgum">[next »]</a>
+	</div>
+
+
+			<div style="text-align:center">
+		<a href="https://web.jae.gg/r?tgum&prev">[« prev]</a>
+		<a href="https://web.jae.gg/">JaeWEB</a>
+		<a href="https://web.jae.gg/r?tgum&next">[next »]</a>
+	</div> 
+
+
+			<div style="text-align:center">
+		<a href="https://baccyflap.com/noai/?prv&s=gus">[« prev]</a>
+		<a href="https://baccyflap.com/noai">no ai webring</a>
+		<a href="https://baccyflap.com/noai/?rnd"><small>[random]</small></a>
+		<a href="https://baccyflap.com/noai/?nxt&s=gus">[next »]</a>
+	</div> 
+
+
+	</div>
+
+
+			<!-- 	<script defer src="/scripts/nativeads.js"></script><div id="ad-note-hidden" class="ftf-dma-note ad native-ad native-ad-1 ytd-j yxd-j yxd-jd aff-content-col aff-inner-col aff-item-list ark-ad-message inplayer-ad inplayer_banners in_stream_banner trafficjunky-float-right dbanner preroll-blocker happy-inside-player blocker-notice blocker-overlay exo-horizontal ave-pl bottom-hor-block brs-block advboxemb wgAdBlockMessage glx-watermark-container overlay-advertising-new header-menu-bottom-ads rkads mdp-deblocker-wrapper amp-ad-inner imggif bloc-pub bloc-pub2 hor_banner aan_fake aan_fake__video-units rps_player_ads fints-block__row full-ave-pl full-bns-block vertbars video-brs player-bns-block wps-player__happy-inside gallery-bns-bl stream-item-widget adsbyrunactive happy-under-player adde_modal_detector adde_modal-overlay ninja-recommend-block aoa_overlay message"><p id="ad-note-content-wrapper"></p></div>
+
+-->
+				<div id="jimmorrison">
+	<div id="jim-talk">
+		<div id="jim-text">Hi. I'm Jim Morrison from the doors.</div>
+		<input type="text" id="jim-input">
+	</div>
+	<img title="Jim Morrison" alt="Jim Morrison" id="jim-face" src="/imgs/misc/jim_morrison.png">
+	<script>
+	// JIMMORRISON SCRIPT
+	console.log("jim morrison activated")
+	let jimInput = document.querySelector("#jim-input")
+	let jimText = document.querySelector("#jim-text")
+	let jimFace = document.querySelector("#jim-face")
+
+	let rules = []
+	fetch("/scripts/jim_morrison.rule")
+		.then(r => r.text())
+		.then(r => {
+			// parse the rulez
+			for (let line of r.split("\n")) {
+				if (line[0] == "#") continue
+				let rule = line.split(/ ?=> ?/)
+				if (rule.length == 2) {
+					let terminator = false
+					if (rule[1][0] == ".") {
+						terminator = true
+						rule[1] = rule[1].replace(/^. ?/, "")
+					}
+					if (!terminator) rule[0] = "\\b"+rule[0]+"\\b"
+					rules.push({
+						regex: RegExp(rule[0]),
+						substitution: rule[1],
+						terminator
+					})
+				}
+			}
+		})
+	
+	jimInput.addEventListener("change", () => {
+		let prompt = jimInput.value
+		jimInput.value = ""
+		prompt = prompt.toLowerCase()
+		let terminated = false
+		let iterations = 0
+		while (!terminated && iterations < 500) {
+			let foundmatch = false
+			for (let rule of rules) {
+				let match = prompt.match(rule.regex)
+				if (match) {
+					foundmatch = true
+					prompt = prompt.replace(rule.regex, rule.substitution)
+					console.log("applying rule ", rule, "into ", prompt)
+					if (rule.terminator) {
+						console.log("terminating")
+						terminated = true
+						break
+					}
+				}
+			}
+			if (!foundmatch) {
+				console.log("no matches")
+				break
+			}
+			iterations++
+		}
+		console.log(prompt, iterations, terminated)
+		if (terminated) {
+			jimText.innerText = prompt
+		} else {
+			jimText.innerText = "What are you saying?"
+		}
+	})
+	</script>
+	</div>
+
+		</footer>
+	</body>
+	</html>
+
+
+	

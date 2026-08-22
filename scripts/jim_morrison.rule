@@ -1,0 +1,35 @@
+hello => HELLO
+hey => HELLO
+hi => HELLO
+
+r => are
+u => you
+ur => your
+you're => your
+youre => your
+what'?s => what is
+
+who are you => WHOAREYOU
+who you are => WHOAREYOU
+what is your name => WHOAREYOU
+
+occupation => OCCUPATION
+
+what is up => WHATSUP
+sup => WHATSUP
+wassup => WHATSUP
+
+the doors => THEDOORS
+doors => THEDOORS
+
+miami => MIAMI1969
+1969 => MIAMI1969
+march 1(st)? => MIAMI
+
+^.*what is THEDOORS.*$ =>. The doors is a little project I started with some friends. We made a couple songs, like "Light my fire"
+^.*THEDOORS.*$ =>. yup
+^.*WHOAREYOU.*$ =>. uhhhh.... Jim.
+^.*german OCCUPATION.*$ =>. That was not such a nice time....
+^.*OCCUPATION.*$ =>. *looks around* ummmm
+^.*WHATSUP.*$ =>. The sky maybe!
+^.*HELLO.*$ =>. Hello there!

@@ -1,0 +1,183 @@
+			<!DOCTYPE html>
+	<html lang="en">
+		<!-- yo what r u doing in my code LMAO
+			 if u want u can poke around and steal stuff! just credit me :)
+			 also it might be badly formatted idk -->
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<link rel="shortcut icon" href="/imgs/squirrel.png">
+			<link rel="stylesheet" href="/style.css">
+			<link rel="stylesheet" href="/styles/code.css">
+			<meta name="author" content="tgum">
+			<meta property="og:title" content=" countdowns">
+			
+				<meta property="og:description" content="i made some countdowns in javascript">
+				<meta name="description" content="i made some countdowns in javascript">
+			
+			<meta property="og:image" content="/imgs/misc/SKOOKY.png">
+			<title> countdowns</title>
+			<!-- <link rel="webmention" href="https://webmention.io/tgum.neocities.org/webmention"> -->
+		</head>
+		<body>
+			<header>
+					<nav>
+	<ul id=navbar >
+<li>		<a class=navel href="/"> home</a></li>
+<li>		<a class=navel href="/blog"> blog</a></li>
+<li>		<a class=navel href="/links.html"> links </a></li>
+<li>		<a class=navel href="/projects/"> projects </a></li>
+<li>		<a class=navel href="/about.html"> about </a></li></ul>
+	</nav>
+
+			</header>
+			<main>
+
+
+			<article>
+				<h1  >countdowns</h1>
+				<div class=time>Written on the <strong>24th Oct 2025</strong></div>
+				<hr>
+				<section>
+					
+<code><div class="highlight"><table class="highlighttable"><tr><td class="linenos linenodiv"><code data-line-number="1"></code></td><td class="code"><code><span class="hic1">//countdown by tgum</span>
+</code></td></tr><tr><td class="linenos linenodiv"><code data-line-number="2"></code></td><td class="code"><code><span class="hip">(</span><span class="hinx">d</span><span class="hip">=&gt;{</span><span class="hinx">setInterval</span><span class="hip">(</span><span class="hinx">T</span><span class="hip">=&gt;{</span><span class="hik">for</span><span class="hip">(</span><span class="hinx">d</span><span class="hiw"> </span><span class="hik">of</span><span class="hiw"> </span><span class="hinb">Array</span><span class="hip">.</span><span class="hikr">from</span><span class="hip">(</span><span class="hinb">document</span><span class="hip">.</span><span class="hinx">querySelectorAll</span><span class="hisb">`.countdown`</span><span class="hip">)){</span><span class="hikd">let</span><span class="hiw"> </span><span class="hinx">f</span><span class="hio">=</span><span class="hinb">Math</span><span class="hip">.</span><span class="hinx">floor</span><span class="hip">,</span><span class="hinx">t</span><span class="hio">=</span><span class="hip">(</span><span class="hiow">new</span><span class="hiw"> </span><span class="hinb">Date</span><span class="hip">(</span><span class="hinx">d</span><span class="hip">.</span><span class="hinx">dataset</span><span class="hip">.</span><span class="hinx">timestamp</span><span class="hip">)</span><span class="hio">-</span><span class="hinb">Date</span><span class="hip">.</span><span class="hinx">now</span><span class="hip">())</span><span class="hio">/</span><span class="himf">1000</span><span class="hip">,</span><span class="hinx">e</span><span class="hio">=</span><span class="his2">&quot;&quot;</span><span class="hip">,</span><span class="hinx">U</span><span class="hio">=</span><span class="hip">[</span><span class="himf">86400</span><span class="hip">,</span><span class="himf">3600</span><span class="hip">,</span><span class="himf">60</span><span class="hip">,</span><span class="himf">1</span><span class="hip">],</span><span class="hinx">F</span><span class="hio">=</span><span class="hip">(</span><span class="hinx">u</span><span class="hip">,</span><span class="hinx">p</span><span class="hip">)=&gt;</span><span class="hinx">f</span><span class="hip">(</span><span class="hinx">u</span><span class="hio">/</span><span class="hinx">U</span><span class="hip">[</span><span class="hinx">p</span><span class="hip">])</span><span class="hio">&gt;</span><span class="himf">0</span><span class="hio">?</span><span class="hinx">T</span><span class="hio">=</span><span class="hinx">f</span><span class="hip">(</span><span class="hinx">u</span><span class="hio">%</span><span class="hip">(</span><span class="hinx">p</span><span class="hio">&gt;</span><span class="himf">0</span><span class="hio">?</span><span class="hinx">U</span><span class="hip">[</span><span class="hinx">p</span><span class="hio">-</span><span class="himf">1</span><span class="hip">]</span><span class="hio">:</span><span class="hinx">u</span><span class="hio">+</span><span class="himf">1</span><span class="hip">)</span><span class="hio">/</span><span class="hinx">U</span><span class="hip">[</span><span class="hinx">p</span><span class="hip">])</span><span class="hio">+</span><span class="his2">&quot; &quot;</span><span class="hio">+</span><span class="his2">&quot;Day0Hour0Minute0Second&quot;</span><span class="hip">.</span><span class="hinx">split</span><span class="hip">(</span><span class="himf">0</span><span class="hip">)[</span><span class="hinx">p</span><span class="hip">]</span><span class="hio">+</span><span class="hip">(</span><span class="hinx">T</span><span class="hio">^</span><span class="himf">1</span><span class="hio">?</span><span class="his2">&quot;s&quot;</span><span class="hio">:</span><span class="hinx">e</span><span class="hip">)</span><span class="hio">+</span><span class="hip">(</span><span class="hinx">p</span><span class="hio">&lt;</span><span class="himf">3</span><span class="hio">?</span><span class="his2">&quot;, &quot;</span><span class="hio">:</span><span class="hinx">e</span><span class="hip">)</span><span class="hio">:</span><span class="hinx">e</span><span class="hip">;</span><span class="hinx">d</span><span class="hip">.</span><span class="hinx">innerText</span><span class="hio">=</span><span class="hinx">t</span><span class="hio">&lt;</span><span class="himf">1</span><span class="hio">?</span><span class="hinx">d</span><span class="hip">.</span><span class="hinx">dataset</span><span class="hip">.</span><span class="hinx">message</span><span class="hio">:</span><span class="hinx">F</span><span class="hip">(</span><span class="hinx">t</span><span class="hip">,</span><span class="himf">0</span><span class="hip">)</span><span class="hio">+</span><span class="hinx">F</span><span class="hip">(</span><span class="hinx">t</span><span class="hip">,</span><span class="himf">1</span><span class="hip">)</span><span class="hio">+</span><span class="hinx">F</span><span class="hip">(</span><span class="hinx">t</span><span class="hip">,</span><span class="himf">2</span><span class="hip">)</span><span class="hio">+</span><span class="hinx">F</span><span class="hip">(</span><span class="hinx">t</span><span class="hip">,</span><span class="himf">3</span><span class="hip">)}},</span><span class="himf">1000</span><span class="hip">)})()</span>
+</code></td></tr></table></div></code>
+<div>
+	time until the year 3000: <strong> <span class="countdown" data-message="why are you reading my blog 975 years from now?" data-timestamp="3000"></span></strong>
+</div>
+<p>
+	earlier i said to myself: "you know what would greatly improve this website? a bunch of countdowns". so i obviously stopped what i was doing and started coding, but since this is pretty easy to make i decided to challenge myself by making it as small as possible, and i think i ended up with a pretty good result at 365 bytes (especially for my first time doing something like this)
+</p>
+<p>
+	if you want you can use it on your own website its pretty simple. first you need to include the script in your page <a href="/scripts/countdown2.js">(download)</a>and then add an element with the class "countdown" and the attributes "data-message" (what will be shown when the countdown expires) and "data-timestamp" (a javascript date string, i'd explain how its formatted if i knew, but there are probably converters/generators online)	<br>
+
+	example:
+<code><div class="highlight"><table class="highlighttable"><tr><td class="linenos linenodiv"><code data-line-number="1"></code></td><td class="code"><code><span class="hip">&lt;</span><span class="hint">span</span> <span class="hina">class</span><span class="hio">=</span><span class="his">&quot;countdown&quot;</span> <span class="hina">data-message</span><span class="hio">=</span><span class="his">&quot;the countdown expired&quot;</span> <span class="hina">data-timestamp</span><span class="hio">=</span><span class="his">&quot;2025-10-22&quot;</span><span class="hip">&gt;&lt;/</span><span class="hint">span</span><span class="hip">&gt;</span>
+</code></td></tr></table></div></code>
+	also i think you need to encode the timezone in the timestamp somehow else it will use the users timezone which may not be intended
+</p>
+<p>
+	if you have any questions or are using it on your website you can email me at tgum[at]proton[dot]me
+</p>
+	<script src="/scripts/countdown2.js"></script>
+
+
+				</section>
+			</article>
+		 		</main>
+		<footer>
+			<!-- <script src="/scripts/mousetrail.js"></script> -->
+			<script src="/scripts/mousetrail.js"></script>
+				<div class="webrings">
+		<div style="text-align:center">webrings:</div>
+			<div style="text-align:center">
+		<a href="https://webring.bucketfish.me/redirect.html?to=prev&name=tgum">[« prev]</a>
+		<a href="https://webring.bucketfish.me">bucket webring</a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=random&name=tgum"><small>[random]</small></a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=next&name=tgum">[next »]</a>
+	</div>
+
+
+			<div style="text-align:center">
+		<a href="https://web.jae.gg/r?tgum&prev">[« prev]</a>
+		<a href="https://web.jae.gg/">JaeWEB</a>
+		<a href="https://web.jae.gg/r?tgum&next">[next »]</a>
+	</div> 
+
+
+			<div style="text-align:center">
+		<a href="https://baccyflap.com/noai/?prv&s=gus">[« prev]</a>
+		<a href="https://baccyflap.com/noai">no ai webring</a>
+		<a href="https://baccyflap.com/noai/?rnd"><small>[random]</small></a>
+		<a href="https://baccyflap.com/noai/?nxt&s=gus">[next »]</a>
+	</div> 
+
+
+	</div>
+
+
+			<!-- 	<script defer src="/scripts/nativeads.js"></script><div id="ad-note-hidden" class="ftf-dma-note ad native-ad native-ad-1 ytd-j yxd-j yxd-jd aff-content-col aff-inner-col aff-item-list ark-ad-message inplayer-ad inplayer_banners in_stream_banner trafficjunky-float-right dbanner preroll-blocker happy-inside-player blocker-notice blocker-overlay exo-horizontal ave-pl bottom-hor-block brs-block advboxemb wgAdBlockMessage glx-watermark-container overlay-advertising-new header-menu-bottom-ads rkads mdp-deblocker-wrapper amp-ad-inner imggif bloc-pub bloc-pub2 hor_banner aan_fake aan_fake__video-units rps_player_ads fints-block__row full-ave-pl full-bns-block vertbars video-brs player-bns-block wps-player__happy-inside gallery-bns-bl stream-item-widget adsbyrunactive happy-under-player adde_modal_detector adde_modal-overlay ninja-recommend-block aoa_overlay message"><p id="ad-note-content-wrapper"></p></div>
+
+-->
+				<div id="jimmorrison">
+	<div id="jim-talk">
+		<div id="jim-text">Hi. I'm Jim Morrison from the doors.</div>
+		<input type="text" id="jim-input">
+	</div>
+	<img title="Jim Morrison" alt="Jim Morrison" id="jim-face" src="/imgs/misc/jim_morrison.png">
+	<script>
+	// JIMMORRISON SCRIPT
+	console.log("jim morrison activated")
+	let jimInput = document.querySelector("#jim-input")
+	let jimText = document.querySelector("#jim-text")
+	let jimFace = document.querySelector("#jim-face")
+
+	let rules = []
+	fetch("/scripts/jim_morrison.rule")
+		.then(r => r.text())
+		.then(r => {
+			// parse the rulez
+			for (let line of r.split("\n")) {
+				if (line[0] == "#") continue
+				let rule = line.split(/ ?=> ?/)
+				if (rule.length == 2) {
+					let terminator = false
+					if (rule[1][0] == ".") {
+						terminator = true
+						rule[1] = rule[1].replace(/^. ?/, "")
+					}
+					if (!terminator) rule[0] = "\\b"+rule[0]+"\\b"
+					rules.push({
+						regex: RegExp(rule[0]),
+						substitution: rule[1],
+						terminator
+					})
+				}
+			}
+		})
+	
+	jimInput.addEventListener("change", () => {
+		let prompt = jimInput.value
+		jimInput.value = ""
+		prompt = prompt.toLowerCase()
+		let terminated = false
+		let iterations = 0
+		while (!terminated && iterations < 500) {
+			let foundmatch = false
+			for (let rule of rules) {
+				let match = prompt.match(rule.regex)
+				if (match) {
+					foundmatch = true
+					prompt = prompt.replace(rule.regex, rule.substitution)
+					console.log("applying rule ", rule, "into ", prompt)
+					if (rule.terminator) {
+						console.log("terminating")
+						terminated = true
+						break
+					}
+				}
+			}
+			if (!foundmatch) {
+				console.log("no matches")
+				break
+			}
+			iterations++
+		}
+		console.log(prompt, iterations, terminated)
+		if (terminated) {
+			jimText.innerText = prompt
+		} else {
+			jimText.innerText = "What are you saying?"
+		}
+	})
+	</script>
+	</div>
+
+		</footer>
+	</body>
+	</html>
+
+
+	

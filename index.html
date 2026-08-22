@@ -1,0 +1,343 @@
+	<!DOCTYPE html>
+	<html lang="en">
+		<!-- yo what r u doing in my code LMAO
+			 if u want u can poke around and steal stuff! just credit me :)
+			 also it might be badly formatted idk -->
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<link rel="shortcut icon" href="/imgs/squirrel.png">
+			<link rel="stylesheet" href="/style.css">
+			<link rel="stylesheet" href="/styles/code.css">
+			<meta name="author" content="tgum">
+			<meta property="og:title" content=" home page">
+			
+				<meta property="og:description" content="hi welcome to tgum's website">
+				<meta name="description" content="hi welcome to tgum's website">
+			
+			<meta property="og:image" content="/imgs/misc/SKOOKY.png">
+			<title> home page</title>
+			<!-- <link rel="webmention" href="https://webmention.io/tgum.neocities.org/webmention"> -->
+		</head>
+		<body>
+			<header>
+					<nav>
+	<ul id=navbar >
+<li>		<a class=navel href="/"> home</a></li>
+<li>		<a class=navel href="/blog"> blog</a></li>
+<li>		<a class=navel href="/links.html"> links </a></li>
+<li>		<a class=navel href="/projects/"> projects </a></li>
+<li>		<a class=navel href="/about.html"> about </a></li></ul>
+	</nav>
+
+			</header>
+			<main>
+
+
+	<h1  >tgum's website </h1>
+	<div class="sidecontent">
+			<script src="/scripts/statuscafe.js"></script><div id="statuscafe-container"></div>
+
+
+			<div class="lastfmwidget-container" data-user="tgum"></div>
+
+
+			<div id="cboxcontainer"><iframe src="https://www5.cbox.ws/box/?boxid=958660&boxtag=WKJKjN" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" class=cbox title="cbox"></iframe></div>
+
+
+	</div>
+
+		<div id="musicplayer" style="display:none;">
+		<div id="musicplayerdisplay">
+		</div>
+		<div id="musicplayercontrols">
+			<button id="musicplayerprev">prev</button><iframe id="musicplayerpause"></iframe><button id="musicplayernext">next</button>
+		</div>
+
+		<script>
+			(() => {
+				function shuffle(array) {
+				  // function completely stolen from https://stackoverflow.com/a/2450976
+				  let currentIndex = array.length;
+
+				  // While there remain elements to shuffle...
+				  while (currentIndex != 0) {
+
+				    // Pick a remaining element...
+				    let randomIndex = Math.floor(Math.random() * currentIndex);
+				    currentIndex--;
+
+				    // And swap it with the current element.
+				    [array[currentIndex], array[randomIndex]] = [
+				      array[randomIndex], array[currentIndex]];
+				  }
+				}
+
+				
+			
+				let playlist = [
+					["499702893", "3847957548","something soon by car seat headrest"],
+					["119937803", "530014586",  "405 by death cab for cutie"],
+					["875462769", "2139285348","angels in the static snow by jam2go"],
+					["200805358", "1091521558","fall apart by dream goblin"],
+					["1073005083","3982022141","real life by ear (listen with headphones i beg u)" ],
+					["3966082118","2205363190","gravity by fem&m (feat. stella dulce)"],
+					["3436192485","512352465", "MURDER EVERY 1 U KNOW! by femtanyl"],
+					["2501312138","4179792837","two headed boy by neutral milk hotel"],
+					["546886218", "553718149", "lite choke by ossian bring"],
+					["886070038", "1337813200","the moon by the microphones"],
+				]
+				shuffle(playlist)
+				
+				let current_song = 0
+				let player = document.querySelector("#musicplayerpause")
+				let display = document.querySelector("#musicplayerdisplay")
+
+				player.onload = () => {
+					player.style.visibility = "visible"
+				}
+
+				function load_song(index) {
+					let song = playlist[index]
+					player.style.visibility = "hidden"
+					player.src = `https://bandcamp.com/EmbeddedPlayer/album=${song[0]}/size=small/bgcol=333333/linkcol=0687f5/artwork=none/track=${song[1]}/transparent=true/`
+					display.innerHTML = song[2]
+				}
+
+				let prevbutton = document.querySelector("#musicplayerprev")
+				let nextbutton = document.querySelector("#musicplayernext")
+				prevbutton.onclick = () => change_song(current_song-1)
+				nextbutton.onclick = () => change_song(current_song+1)
+
+				function change_song(newindex) {
+					if (newindex < 0 || newindex >= playlist.length) {
+						return
+					}
+
+					current_song = newindex
+
+
+					prevbutton.style.visibility = current_song > 0 ? "visible" : "hidden"
+					nextbutton.style.visibility = current_song < playlist.length-1 ? "visible" : "hidden"
+
+					load_song(current_song)
+				}
+
+
+				change_song(0)
+			})()
+		</script>
+	</div>
+
+	
+	<p>
+		hi! this is my website with a bunch of stuff :D
+	</p>
+	<p>
+		some pages might not be finished, some parts might look broken and whatnot.
+	</p>
+
+	<h2  >stuff i made you should check out ;) </h2>
+	<ul  >
+<li>		<a href="https://cybergarden.tgum.net">my New project! my very own webgarden!</a></li>
+<li>		<a href="/projects/">stuff i made</a></li>
+<li>		<a href="/links.html">things i enjoy on the internet</a></li>
+<li>		<a href="/recipes/">my recipes</a></li>
+<li>		<a href="/guestbook.html">sign my guestbook</a></li>
+<li>		<a href="/changelog.html">view the changelog</a></li></ul>
+	<h2  >todo: </h2>
+	<ul  >
+<li>		add an updates section to the homepage</li>
+<li>		add an atom feed for my blog</li>
+<li>		write stuff posts and stuff</li>
+<li>		add a "music" page</li>
+<li>		interact with more websites!</li>
+<li>		move away from cbox (maybe code my own alternative?)</li>
+<li>		make the tofu army for jim morrison</li>
+<li>		add a jim morrison chatbot</li>
+<li>		fix the music player <button onclick="document.querySelector('#musicplayer').style.display = ''"><small>(turn it on anyway? its rly scuffed)</small></button></li></ul>
+	<p>
+		time until my birthday: <span class="countdown" data-message="my birthday has passed" data-timestamp="29 jan 2027"></span>
+	</p>
+	<p id="buttonwall" style="text-align: center;">
+		<!--
+		<a href="URL"><img class="badge" width="88" height="31" src=" /imgs/buttons/IMG " title="DESC" alt="DESC"></a>
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/IMG " title="DESC" alt="DESC">
+		-->
+			<img class="badge" width="88" height="31" src=" /imgs/button.gif " title="my button :D" alt="my button :D">
+
+
+		<a href="https://dreamgobl.in"><img class="badge" width="88" height="31" src=" /imgs/buttons/dreamgoblin.png " title="dream goblin" alt="dream goblin"></a>
+		<a href="https://art1st1x.neocities.org"><img class="badge" width="88" height="31" src=" /imgs/buttons/art1st1x_logo.gif " title="art1st1x" alt="art1st1x"></a>
+		<a href="https://adamledoux.net"><img class="badge" width="88" height="31" src=" /imgs/buttons/adamledoux.png " title="adam le doux dot net" alt="adam le doux dot net"></a>
+		<a href="https://lyra.horse"><img class="badge" width="88" height="31" src=" /imgs/buttons/lyra.horse.png " title="lyra.horse" alt="lyra.horse"></a>
+		<a href="https://lilysthings.org"><img class="badge" width="88" height="31" src=" /imgs/buttons/lilysthings.png " title="lily's things" alt="lily's things"></a>
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/any_browser.gif " title="Best viewed with Any browser" alt="Best viewed with Any browser">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/ienuke.gif " title="NUKE Internet Explorer" alt="NUKE Internet Explorer">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/chrome_is_evil.gif " title="Google Chrome IS EVIL" alt="Google Chrome IS EVIL">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/firefox_user.gif " title="Firefox user" alt="Firefox user">
+		<a href="/about.html#contact"><img class="badge" width="88" height="31" src=" /imgs/buttons/isitslow.gif " title="Is it SLOW? SAY SO !" alt="Is it SLOW? SAY SO !"></a>
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/graphic_design_is_my_passion.gif " title="graphic design is my passion" alt="graphic design is my passion">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/y2kcompliant.png " title="year 2000 compliant" alt="year 2000 compliant">
+		<a href="https://hillhouse.neocities.org/cliques/library/"><img class="badge" width="88" height="31" src=" /imgs/buttons/library88x31-green.png " title="little pixel library card" alt="little pixel library card"></a>
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/linux_powered.gif " title="Linux powered" alt="Linux powered">
+		<a href="https://htmlforpeople.com/"><img class="badge" width="88" height="31" src=" /imgs/buttons/html_learn_it_today.gif " title="&lt;HTML&gt; Learn it today!" alt="&lt;HTML&gt; Learn it today!"></a>
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/made_with_css.gif " title="Made with cascading style sheets" alt="Made with cascading style sheets">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/madewithlove.png " title="Made with love" alt="Made with love">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/piracy.gif " title="Piracy Now!" alt="Piracy Now!">
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/queercoded.png " title="you're telling me a queer coded this?" alt="you're telling me a queer coded this?">
+		<a href="https://github.com/gorhill/uBlock"><img class="badge" width="88" height="31" src=" /imgs/buttons/ublock_origin_now.webp " title="ublock origin NOW!" alt="ublock origin NOW!"></a>
+		<a href="http://www.hat.net/abs/noclick/"><img class="badge" width="88" height="31" src=" /imgs/buttons/noclick.gif " title="Don't click here!" alt="Don't click here!"></a>
+		<a href="https://ruffle.rs/"><img class="badge" width="88" height="31" src=" /imgs/buttons/ruffle.png " title="Get Ruffle" alt="Get Ruffle"></a>
+		<img class="badge" width="88" height="31" src=" /imgs/buttons/snort_lipids.png " title="Snort the Lipids NOW!" alt="Snort the Lipids NOW!">
+			<iframe src="//incr.easrng.net/badge?key=tgum" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0" class="badge"></iframe>
+
+
+	</p>
+
+		<iframe src="https://john.citrons.xyz/embed?ref=tgum.net" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
+
+
+	<script>
+		// Move cbox to bottom of page on narrow screens
+		let cbox = document.querySelector("#cboxcontainer")
+		let cboxpos = "side"
+		function movecbox() {
+			if (window.innerWidth < 700) {
+				if (cboxpos == "side") {
+					document.querySelector("main").append(cbox)
+					cboxpos = "bottom"
+				}
+			} else {
+				if (cboxpos == "bottom") {
+					document.querySelector(".sidecontent").append(cbox)
+					cboxpos = "side"
+				}
+			}
+		}
+		movecbox()
+		addEventListener("resize", movecbox)
+	</script>
+
+		<script src="/scripts/countdown2.js"></script>
+
+
+		<script src="/scripts/lastfm.js"></script>
+
+
+ 		</main>
+		<footer>
+			<!-- <script src="/scripts/mousetrail.js"></script> -->
+			<script src="/scripts/mousetrail.js"></script>
+				<div class="webrings">
+		<div style="text-align:center">webrings:</div>
+			<div style="text-align:center">
+		<a href="https://webring.bucketfish.me/redirect.html?to=prev&name=tgum">[« prev]</a>
+		<a href="https://webring.bucketfish.me">bucket webring</a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=random&name=tgum"><small>[random]</small></a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=next&name=tgum">[next »]</a>
+	</div>
+
+
+			<div style="text-align:center">
+		<a href="https://web.jae.gg/r?tgum&prev">[« prev]</a>
+		<a href="https://web.jae.gg/">JaeWEB</a>
+		<a href="https://web.jae.gg/r?tgum&next">[next »]</a>
+	</div> 
+
+
+			<div style="text-align:center">
+		<a href="https://baccyflap.com/noai/?prv&s=gus">[« prev]</a>
+		<a href="https://baccyflap.com/noai">no ai webring</a>
+		<a href="https://baccyflap.com/noai/?rnd"><small>[random]</small></a>
+		<a href="https://baccyflap.com/noai/?nxt&s=gus">[next »]</a>
+	</div> 
+
+
+	</div>
+
+
+			<!-- 	<script defer src="/scripts/nativeads.js"></script><div id="ad-note-hidden" class="ftf-dma-note ad native-ad native-ad-1 ytd-j yxd-j yxd-jd aff-content-col aff-inner-col aff-item-list ark-ad-message inplayer-ad inplayer_banners in_stream_banner trafficjunky-float-right dbanner preroll-blocker happy-inside-player blocker-notice blocker-overlay exo-horizontal ave-pl bottom-hor-block brs-block advboxemb wgAdBlockMessage glx-watermark-container overlay-advertising-new header-menu-bottom-ads rkads mdp-deblocker-wrapper amp-ad-inner imggif bloc-pub bloc-pub2 hor_banner aan_fake aan_fake__video-units rps_player_ads fints-block__row full-ave-pl full-bns-block vertbars video-brs player-bns-block wps-player__happy-inside gallery-bns-bl stream-item-widget adsbyrunactive happy-under-player adde_modal_detector adde_modal-overlay ninja-recommend-block aoa_overlay message"><p id="ad-note-content-wrapper"></p></div>
+
+-->
+				<div id="jimmorrison">
+	<div id="jim-talk">
+		<div id="jim-text">Hi. I'm Jim Morrison from the doors.</div>
+		<input type="text" id="jim-input">
+	</div>
+	<img title="Jim Morrison" alt="Jim Morrison" id="jim-face" src="/imgs/misc/jim_morrison.png">
+	<script>
+	// JIMMORRISON SCRIPT
+	console.log("jim morrison activated")
+	let jimInput = document.querySelector("#jim-input")
+	let jimText = document.querySelector("#jim-text")
+	let jimFace = document.querySelector("#jim-face")
+
+	let rules = []
+	fetch("/scripts/jim_morrison.rule")
+		.then(r => r.text())
+		.then(r => {
+			// parse the rulez
+			for (let line of r.split("\n")) {
+				if (line[0] == "#") continue
+				let rule = line.split(/ ?=> ?/)
+				if (rule.length == 2) {
+					let terminator = false
+					if (rule[1][0] == ".") {
+						terminator = true
+						rule[1] = rule[1].replace(/^. ?/, "")
+					}
+					if (!terminator) rule[0] = "\\b"+rule[0]+"\\b"
+					rules.push({
+						regex: RegExp(rule[0]),
+						substitution: rule[1],
+						terminator
+					})
+				}
+			}
+		})
+	
+	jimInput.addEventListener("change", () => {
+		let prompt = jimInput.value
+		jimInput.value = ""
+		prompt = prompt.toLowerCase()
+		let terminated = false
+		let iterations = 0
+		while (!terminated && iterations < 500) {
+			let foundmatch = false
+			for (let rule of rules) {
+				let match = prompt.match(rule.regex)
+				if (match) {
+					foundmatch = true
+					prompt = prompt.replace(rule.regex, rule.substitution)
+					console.log("applying rule ", rule, "into ", prompt)
+					if (rule.terminator) {
+						console.log("terminating")
+						terminated = true
+						break
+					}
+				}
+			}
+			if (!foundmatch) {
+				console.log("no matches")
+				break
+			}
+			iterations++
+		}
+		console.log(prompt, iterations, terminated)
+		if (terminated) {
+			jimText.innerText = prompt
+		} else {
+			jimText.innerText = "What are you saying?"
+		}
+	})
+	</script>
+	</div>
+
+		</footer>
+	</body>
+	</html>
+
+
+

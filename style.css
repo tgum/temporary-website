@@ -1,0 +1,381 @@
+/*
+  tgum's styles!
+  i made them myself so if u use them please link back to me or something!
+ */
+
+/* idk like general styles */
+
+html {
+	background-color: #ffc27a;
+	background-image: url('/imgs/background.png');
+}
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	color: #201127;
+	background-color: #ffc27a;
+	background-image: url('/imgs/background.png');
+	background-repeat: repeat;
+	image-rendering: pixelated;
+	line-height: 1.3em;
+	overflow-wrap: anywhere;
+	/* font-size: 1.1rem; */
+}
+
+img {
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+	image-rendering: -webkit-optimize-contrast;
+	max-width: 100%;
+}
+
+hr {
+	border: 1px solid #201433;
+	width: 95%;
+}
+
+a {
+	color: #355d68;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 0 0 0.2rem 0;
+}
+
+a:visited {
+	color: #a73169;
+}
+
+a:hover {
+	color: #d9626b;
+	border-width: 0 0 0.4rem 0;
+}
+
+/* a[href^="https://"]:not(:has(.ext))::after,
+a[href^="http://"]:not(:has(.ext))::after {
+	content: url('/imgs/external.png');
+} */
+
+h1 {
+	text-indent: 0.5em;
+	line-height: normal;
+}
+
+h2 {
+	line-height: normal;
+}
+
+main {
+	background-color: #ffc27a;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 1rem 4rem 1rem 4rem;
+
+	border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABTElEQVRYR+1Z2w0CMQyjIzEOIzARIzAOI4EOKRVKZTlue0d76v0gdE5jnEfTki7B53m9vzfo7fVI26f/zpZR7T3+6zTyqI78mqo9JGovzIFXzjtm71U8Wy8rOjxRT1BVNJI2v5haf6nW0EJ1GFGU9CjHVGIMz4Qy+6Lqo4aMQPR91B8sJuSoNuTRyKFIno9oLyVVZc1vWNFpiPbqAqh4WE2EFf07UXUKiradXjjjl3emvXKwlXAmaguNpiwd80ZRdhFtzUV2Iija0wq9KPnKUVEwCl+KUolEQKHoaDsSalPz7PXscIUuJsRIQjibT/OEPw1RNj2pl1uq0kzR4lyPimo6or2OImz4QBGmQwnLYTXUzURbHar2rJvALVR11IqXibJi2Sv00Wov+ij6E+E0RFVlqu+eWkN/OFHUJ9EPMXz0jBXdUGAfZTk4CtEP7AjuuljDOxcAAAAASUVORK5CYII=") 14 / 14px / 0 round;
+	border-width: 14px;
+	border-style: solid;
+}
+
+button {
+	border: 0.2em solid;
+	border-color: #d9626b #a73169 #a73169 #d9626b;
+	background-color: #c24b6e;
+	color: #ffeb99;
+	font-weight: bold;
+}
+
+input[type="text"] {
+	border: 0.15em solid;
+	border-color: #355d68 #94c5ac #94c5ac #355d68;
+	background-color: #6aaf9d;
+	color: #1b1e34;
+	outline: none;
+}
+
+@media (max-width: 700px) {
+	main {
+		margin: 0.5rem 1rem 0.5rem 1rem;
+	}
+}
+
+footer {
+	height: 50vh;
+}
+
+.webrings {
+	width: fit-content;
+	/* height: fit-content; */
+	margin-inline: auto;
+	background-color: #ffc27a;
+	padding: 0.5em;
+
+	border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABR0lEQVRYR+2ZwQ3CMAxFyUiMwwhMxAiMw0ggDuHgynrfjksTqRxJbb9823HUtkvx73m9v78ub69Hi7gmu5AzJTAF9HyQnQvaDa1jTykKlAXsduuCkjJ23VOeMkF2NnMbRacF9RTqOyLwrpz6nFXas7P/t2VArSJUW3REVSm7UXQ50NFaI6Wj666iy4FGd179vFfj5bN+FHwZUG+j0ykqg2bPwdGUUzOHZ30VUPTaNw0o3X/XAa26lGRLQo1fdnvaHbT6UpIFlrueinkUQLWXJ9N5joqSyoqK/v7+2DnrqyWfZjLRxn6gR3d7+ByNvi4kJaLr2PU0c9WA2czQwHFTPxowmpk0KNUMKaxulDLZ17GZ1IAWXLULg9Itqq/blHops+Dq20FspuVAsymM2lHzWH8469VaOwx0L0A6Lbx1/CqSPQ+jdrSBD8qmyTqYR8SEAAAAAElFTkSuQmCC") 14 / 14px / 0 round;
+	border-width: 14px;
+	border-style: solid;
+}
+
+ol,
+ul {
+	padding-left: 1rem;
+}
+
+/* NAVBAR */
+
+#navbar {
+	padding: 0;
+	margin: 0;
+	background-color: #1b1e34;
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+
+.navel {
+	display: flex;
+	align-items: center;
+	font-size: 1.3rem;
+	margin: 0.5rem;
+	border-width: 0 0 0.3rem 0;
+	color: #6aaf9d;
+}
+
+.navel:visited {
+	color: #6aaf9d;
+}
+
+.navel:hover {
+	color: #d9626b;
+	border-width: 0 0 0.3rem 0;
+}
+
+/* MY EPIK CURSORS */
+
+body {
+	cursor: url("/imgs/cursors/arrow.png") 0 0, auto !important;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+summary,
+label {
+	cursor: url("/imgs/cursors/hand.png") 10 3, auto;
+}
+
+:where(input[type="text"],
+	input[type="search"],
+	input[type="email"],
+	input[type="password"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="number"],
+	input:not([type]),
+	textarea,
+	[contenteditable="true"],
+	[contenteditable]:not([contenteditable="false"]),
+	[role="textbox"]) {
+	cursor: url("/imgs/cursors/i-beam.png") 15 17, auto !important;
+}
+
+textarea:resizer {
+	cursor: url("/imgs/cursors/resize_se.png") 15 15, auto;
+}
+
+/* GET AN ADBLOCKER NOTIFICATION */
+
+#ad-note-hidden,
+#ad-note {
+	display: none;
+}
+
+#ad-note {
+	display: block;
+	position: fixed;
+	bottom: 5em;
+	right: 1em;
+	width: 14em;
+	border: #a73169 2px solid;
+	background-color: #ffc27a;
+	padding: 1em;
+	font-size: 0.9em;
+}
+
+#ad-note-content-wrapper {
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+/* custome CBOX */
+.cbox {
+	max-width: 100%;
+	width: 100%;
+	height: 25em;
+}
+
+#cboxcontainer {
+	border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABLUlEQVRYR+2YyxXCMAwESUmUQwlURAmUQ0lwMgfx9GbXHxwHuAXbq9FGsjHb/Xx9nio+l8dtq1h2qo231S6cBqoGLomp86Pr7voy/+2oGtgNNAw0gtCzW6ekl41/OOoKTQOlwNmrz5oylpRbOt1r9GugmZOtjqjNRNsk7qO7AXVrMmu2olMSiw7F77PnjAePQXUXmA5aADKH6I1kNRoTIx10dDlQynj0uOzoaBDSl0HdE4UCu3rrg9K2RI7RuKufOuoKERgdpVQKMqgL4s7/PVDKuNVB0pdfPQlNA6Xid8Fa9dbfR1sd671edrR3YFdPbiZX2J1PzXo8UPU+T3em+ENcvTvJju4W1K2x0fPX73r39uj+pTPtFrob0NE1SPrHq1HKePT439HeDi/j6AsENa66V3pAhAAAAABJRU5ErkJggg==") 14 / 14px / 0 round;
+	border-width: 14px;
+	border-style: solid;
+}
+
+/* status.cafe widget */
+
+#statuscafe {
+	padding: .5em;
+	background-color: #ffc27a;
+	color: #201127;
+	font-family: sans-serif;
+
+	border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABB0lEQVRYR+2YyxHCMAxEcUmUQwlURAmUQ0nkgjmYEc+bSJ5oRrkkGUnWZrXxR+3yuZ7X+7s//7vfXo8240c+ar5vUjWQgJBdzdd6wCxTqv8IWI3v/nmBjl9M71RiYtSSQK+wySgBU0u3DCgl8rZb4/1olBiLtu8GSlLw0uioydNqVAZKDFHpvePzzaO11oMG5LWeNHUWu8uWbcXHFFBvlovRZYweXYFUoJTPLD0FqkDIn/KVRolB1V6MqoyRfzFKDKn2PC2dNBtnmmjVczuVdG++6j1ZzFKfwLJjp4QGplKTdGj8sOMyaVC15wc626+c7VCHlT4NUPo5SGPe8WEaDQOaZgnNAnQDjIz9OmpY+HYAAAAASUVORK5CYII=") 14 / 14px / 0 round;
+	border-width: 14px;
+	border-style: solid;
+
+}
+
+#statuscafe-username {
+	margin-bottom: .5em;
+}
+
+#statuscafe-content {
+	margin: 0 1em 0.5em 1em;
+}
+
+/* last.fm widget */
+
+.lastfmwidget {
+	padding: .5em;
+	border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABEklEQVRYR+2Y7RHCMAiG7UiO4whO5AiO40j6C09puRcIB6GX/mtDy3NPyEezXYqv5/X+PkK4vR7b7/O/mwrmdFBKSCb4vSRBGxdmtAyUdwmvGTKEAJEx1E55RKPtQCWTUQMvzOh0oNppYtSkN8+3Rr0fsIJ78yxQNMHzdjQWwiZ8awlY4xeo1RiK72tUu1IgA952Kf/O6PSg1YC8BzjPbsJH85m3S63viaDS/tKaYDR+1eioQbTUUimuGvWaPk+Neg1kvdd3rc8yZM3T36j3J8xqShuvPimhD1btBSBoFRg33Q90tprkPOkHENrBEw46ej7q3j1ZTzDSQbVdojVg/QdDYyRsZUJmkYg0UASC2k8D+gHb3yy6ImtqfQAAAABJRU5ErkJggg==") 14 / 14px / 0 round;
+	border-width: 14px;
+	border-style: solid;
+	text-align: center;
+}
+
+.lastfmsong,
+.lastfmartist {
+	font-weight: bold;
+}
+
+.lastfmalbum {
+	display: none;
+}
+
+.lastfmcover {
+	border-radius: 0.3em;
+}
+
+/* small side "bar" on the homepage */
+
+.sidecontent {
+	float: right;
+	max-width: 17em;
+	/* margin: 1em; */
+}
+
+.sidecontent>* {
+	margin: 1em 0;
+}
+
+@media (max-width: 700px) {
+	.sidecontent {
+		float: none;
+		max-width: 100%;
+	}
+}
+
+
+/* 88x31 buttons/badges */
+.badge {
+	margin: 0em;
+}
+
+a .badge:hover {
+	transform: scale(1.05);
+}
+
+#buttonwall .badge {
+	margin-top: 0.2em;
+}
+
+a .badge {
+	margin: 0em;
+}
+
+
+/* tiny music player */
+#musicplayer {
+	position: fixed;
+	bottom: 0.5em;
+	left: 0.5em;
+	max-width: 126px;
+}
+
+#musicplayercontrols {
+	background: #333333;
+	border-radius: 0 0 1em 1em;
+	height: 42px;
+}
+
+#musicplayercontrols * {
+	width: 42px;
+	height: 42px;
+	border: none;
+}
+
+#musicplayercontrols button {
+	background: #333333;
+	border: 1px solid #575757;
+	vertical-align: top;
+	color: #d3d3d2;
+}
+
+#musicplayercontrols button:hover {
+	background: #474747;
+}
+
+#musicplayerprev {
+	border-radius: 0 0 0 1em;
+	border-width: 1px 1px 0 1px;
+}
+
+#musicplayernext {
+	border-radius: 0 0 1em 0;
+	border-width: 1px 1px 1px 0;
+}
+
+#musicplayerdisplay {
+	border: 0.4em solid #333;
+	background: #ffffff;
+	height: 80px;
+	border-radius: 1em 1em 0 0;
+	padding: 3px;
+
+	text-align: center;
+	font-family: monospace;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+/* Jim Morrison */
+
+#jimmorrison {
+	position: fixed;
+	bottom: 0em;
+	right: 1em;
+	text-align: right;
+}
+
+#jim-face {
+	width: 4em;
+	height: auto;
+}
+
+#jim-talk {
+	max-width: 20em;
+	height: auto;
+	padding: 0.2em;
+	border: 0.15em solid;
+	border-color: #c24b6e;
+	background: #ffc27a;
+}

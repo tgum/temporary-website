@@ -1,0 +1,246 @@
+			<!DOCTYPE html>
+	<html lang="en">
+		<!-- yo what r u doing in my code LMAO
+			 if u want u can poke around and steal stuff! just credit me :)
+			 also it might be badly formatted idk -->
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<link rel="shortcut icon" href="/imgs/squirrel.png">
+			<link rel="stylesheet" href="/style.css">
+			<link rel="stylesheet" href="/styles/code.css">
+			<meta name="author" content="tgum">
+			<meta property="og:title" content=" i made a game about a penguin">
+			
+				<meta property="og:description" content="talking about how i made it">
+				<meta name="description" content="talking about how i made it">
+			
+			<meta property="og:image" content="/imgs/misc/SKOOKY.png">
+			<title> i made a game about a penguin</title>
+			<!-- <link rel="webmention" href="https://webmention.io/tgum.neocities.org/webmention"> -->
+		</head>
+		<body>
+			<header>
+					<nav>
+	<ul id=navbar >
+<li>		<a class=navel href="/"> home</a></li>
+<li>		<a class=navel href="/blog"> blog</a></li>
+<li>		<a class=navel href="/links.html"> links </a></li>
+<li>		<a class=navel href="/projects/"> projects </a></li>
+<li>		<a class=navel href="/about.html"> about </a></li></ul>
+	</nav>
+
+			</header>
+			<main>
+
+
+			<article>
+				<h1  >i made a game about a penguin</h1>
+				<div class=time>Written on the <strong>18th Jun 2026</strong></div>
+				<hr>
+				<section>
+					
+	<p>
+		recently i made a little game in javascript in about a week!
+	</p>
+	<iframe frameborder="0" src="https://itch.io/embed/4639865?linkback=true&amp;bg_color=ffffff&amp;fg_color=222222&amp;link_color=0000ff&amp;border_color=bfbfce" width="552" height="167"><a href="https://tgum.itch.io/penguin-game">penguin game by tgum</a></iframe>
+	<p>
+		its kind of a gay love story walking simulator i guess? i dont really know the genres it would fit in best. anyway im just gonna write about the developpement of the game hehe
+	</p>
+	<h2  >snow simulator </h2>
+	<p>
+		the original thing i started with was a tiny prototype for a snow physics simulation. you could just move around and in doing so displace the snow. i didnt even know if i wanted to make a game out of this, i just had the idea for this while going to sleep and really wanted to see if it would work lol
+	</p>
+	<img src=" /imgs/blog/26_06_18_penguin_game/img1781601470.png " alt="screnshot of the original prototype" />
+	<p>
+		i made it using my tiny javascript game engine microgame which ive been using for most of my recent projects. its fairly similar to löve2d except it has way less features and is made for the type of games i usually make. its still basically only msde for me and has a lot of weird quirks but id like for itto become a tool other ppl could use for their games :)
+	</p>
+	<h2  >the pinguni </h2>
+	<p>
+		the next step is to add an actual playe character lol. whats interesting is that the penguin (and all other objects in the game) arent sprites or 3d models, its just a bunch of circles and other shapes drawn slightly offset to eachother
+	</p>
+	<img src="/imgs/blog/26_06_18_penguin_game/animation.gif " alt="" />
+	<p>
+		and since its a bunch of shapes drawn cia code i can just animate it using math and stuff :D although tweaking the animations was really annoying since i had to edit a number in the code and refresh thpage each time. next time ill probably make some kind of debug ui to edit the values live.
+	</p>
+	<p>
+		i do kinda have a problem with making tools to make the developpement easier. its just really annoying to make new code that wont be used in the game. but they do make editing stuff way easier.
+	</p>
+	<h2  >trees </h2>
+	<p>
+		next up i had to add trees to spruce up (pun intended) the landscape. i know there arent really trees in the south pole but who cares. the penguin is a poet.
+	</p>
+	<p>here are a couple of in developpement screenshot:</p>
+	<img src="/imgs/blog/26_06_18_penguin_game/2026-06-03_15:13:51.png " alt="" />
+	<img src="/imgs/blog/26_06_18_penguin_game/2026-06-03_17:39:39.png " alt="" />
+	<p>
+		it took a while to get right but i think they look alright.
+	</p>
+	<p>
+		i spent a while trying to make drawing the trees more efficient cuz turns out drawing a lot of circles every frame kinda hurts performance. ill write more about optimization later
+	</p>
+	<h2  >writing the story </h2>
+	<p>
+		so at that point i had a game where u can walk around and see trees. not very interesting. so i spent like 10 minutes figuring out what the game is about and what you do. then i locked in for a few hours and wrote most of the journal entries. then during the rest of the developpement i edited them a bunch
+	</p>
+	<p>
+		funnily enough a few detail that i randomly came up with actually match up pretty well with real life. for example in antarctica its winter during june.
+	</p>
+	<p>
+		this is my first time spending so much time writing. usually i write the first word that comes to mind and sometimes after i quickly check if what i wrote sounds okay. but for this game i tried to put a lot more thought into the words. im not really satisfied with the writing but i think its ok, and i cant get better without doing it! i did kinda give up at the end cuz its pretty boring for me to try and express my thoughts perfectly.
+	</p>
+	<p>
+		originally the journal ui looked quite different, but my friend convinced me to make an actual ui, which was a good idea. and also led me to make my own handwritten font because i guess i didnt think of using one that already existed lol
+	</p>
+	<p>
+		also instead of pencils you would find ink bottles... which isnt as easily recognizable
+	</p>
+	<img src="/imgs/blog/26_06_18_penguin_game/2026-06-03_16:23:43.png " alt="" />
+	<h2  >creating the world </h2>
+	<p>
+		then i spent the next few days fixing stuff, adding trees and pencils and optimizing. i did start to slow down quite a bit cuz it got pretty boring...
+	</p>
+	<p>
+		i had a pretty funny way to add trees. since i was too lazy to make an editor, i just made a keyboard shortcut that spawned a tree at the player position, and another to copy the list of trees to the clipboard as json.
+	</p>
+	<h2  >optimization </h2>
+	<p>
+		i spent a bunch of time on this, originally trying to get 60fps on my (old as hell) computer but i kinda gave up on that. i did do a bunch but i dont think i could do that much better without using webgl. i just couldnt be bothered with learning some complicated looking technology.
+	</p>
+	<p>
+		the biggest bottleneck is drawing all the snow and trees. originally each snow particle was a circle but squares are much faster to draw. also the snow is processed and rendered in "quadrants" stored in a hashmap (basically like chunks in minecraft). it might be slightly overkill but maybe not actually.
+	</p>
+	<p>
+		trees were a bit harder cuz they have to look good and not lower the fps... i think they look ok? im not very happy with the snow on them but im not sure how i could improve it
+	</p>
+	<p>
+		so yeah not any fancy groundbreaking tricks but way more than i usually do.
+	</p>
+	<h2  >conclusion </h2>
+	<p>
+		making this game was pretty fun :D
+	</p>
+	<p>
+		i think its really underrated and more ppl should play it hehe
+	</p>
+	<p>
+		sorry if this article isnt really well written and stuff ._.
+	</p>
+				</section>
+			</article>
+		 		</main>
+		<footer>
+			<!-- <script src="/scripts/mousetrail.js"></script> -->
+			<script src="/scripts/mousetrail.js"></script>
+				<div class="webrings">
+		<div style="text-align:center">webrings:</div>
+			<div style="text-align:center">
+		<a href="https://webring.bucketfish.me/redirect.html?to=prev&name=tgum">[« prev]</a>
+		<a href="https://webring.bucketfish.me">bucket webring</a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=random&name=tgum"><small>[random]</small></a>
+		<a href="https://webring.bucketfish.me/redirect.html?to=next&name=tgum">[next »]</a>
+	</div>
+
+
+			<div style="text-align:center">
+		<a href="https://web.jae.gg/r?tgum&prev">[« prev]</a>
+		<a href="https://web.jae.gg/">JaeWEB</a>
+		<a href="https://web.jae.gg/r?tgum&next">[next »]</a>
+	</div> 
+
+
+			<div style="text-align:center">
+		<a href="https://baccyflap.com/noai/?prv&s=gus">[« prev]</a>
+		<a href="https://baccyflap.com/noai">no ai webring</a>
+		<a href="https://baccyflap.com/noai/?rnd"><small>[random]</small></a>
+		<a href="https://baccyflap.com/noai/?nxt&s=gus">[next »]</a>
+	</div> 
+
+
+	</div>
+
+
+			<!-- 	<script defer src="/scripts/nativeads.js"></script><div id="ad-note-hidden" class="ftf-dma-note ad native-ad native-ad-1 ytd-j yxd-j yxd-jd aff-content-col aff-inner-col aff-item-list ark-ad-message inplayer-ad inplayer_banners in_stream_banner trafficjunky-float-right dbanner preroll-blocker happy-inside-player blocker-notice blocker-overlay exo-horizontal ave-pl bottom-hor-block brs-block advboxemb wgAdBlockMessage glx-watermark-container overlay-advertising-new header-menu-bottom-ads rkads mdp-deblocker-wrapper amp-ad-inner imggif bloc-pub bloc-pub2 hor_banner aan_fake aan_fake__video-units rps_player_ads fints-block__row full-ave-pl full-bns-block vertbars video-brs player-bns-block wps-player__happy-inside gallery-bns-bl stream-item-widget adsbyrunactive happy-under-player adde_modal_detector adde_modal-overlay ninja-recommend-block aoa_overlay message"><p id="ad-note-content-wrapper"></p></div>
+
+-->
+				<div id="jimmorrison">
+	<div id="jim-talk">
+		<div id="jim-text">Hi. I'm Jim Morrison from the doors.</div>
+		<input type="text" id="jim-input">
+	</div>
+	<img title="Jim Morrison" alt="Jim Morrison" id="jim-face" src="/imgs/misc/jim_morrison.png">
+	<script>
+	// JIMMORRISON SCRIPT
+	console.log("jim morrison activated")
+	let jimInput = document.querySelector("#jim-input")
+	let jimText = document.querySelector("#jim-text")
+	let jimFace = document.querySelector("#jim-face")
+
+	let rules = []
+	fetch("/scripts/jim_morrison.rule")
+		.then(r => r.text())
+		.then(r => {
+			// parse the rulez
+			for (let line of r.split("\n")) {
+				if (line[0] == "#") continue
+				let rule = line.split(/ ?=> ?/)
+				if (rule.length == 2) {
+					let terminator = false
+					if (rule[1][0] == ".") {
+						terminator = true
+						rule[1] = rule[1].replace(/^. ?/, "")
+					}
+					if (!terminator) rule[0] = "\\b"+rule[0]+"\\b"
+					rules.push({
+						regex: RegExp(rule[0]),
+						substitution: rule[1],
+						terminator
+					})
+				}
+			}
+		})
+	
+	jimInput.addEventListener("change", () => {
+		let prompt = jimInput.value
+		jimInput.value = ""
+		prompt = prompt.toLowerCase()
+		let terminated = false
+		let iterations = 0
+		while (!terminated && iterations < 500) {
+			let foundmatch = false
+			for (let rule of rules) {
+				let match = prompt.match(rule.regex)
+				if (match) {
+					foundmatch = true
+					prompt = prompt.replace(rule.regex, rule.substitution)
+					console.log("applying rule ", rule, "into ", prompt)
+					if (rule.terminator) {
+						console.log("terminating")
+						terminated = true
+						break
+					}
+				}
+			}
+			if (!foundmatch) {
+				console.log("no matches")
+				break
+			}
+			iterations++
+		}
+		console.log(prompt, iterations, terminated)
+		if (terminated) {
+			jimText.innerText = prompt
+		} else {
+			jimText.innerText = "What are you saying?"
+		}
+	})
+	</script>
+	</div>
+
+		</footer>
+	</body>
+	</html>
+
+
+	
